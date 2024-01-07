@@ -100,7 +100,7 @@ def gamming_with_cipher_feedback(datablock: Datablock, IV: Datablock, key: Datab
     for i in range(0, len(datablock)):
         MSB64 = Datablock((R.asBitArray())[-64:]).setBitSize(64)
 
-        gamma = magmaCipher(MSB64, key, True)
+        gamma = magma_cipher(MSB64, key, True)
 
         result[i] = (datablock[i] ^ gamma).setBitSize(datablock[i].getBitSize(), True)
 
